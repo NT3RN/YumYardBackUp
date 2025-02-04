@@ -108,7 +108,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Blue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel1.Controls.Add(this.A_B_Theme);
             this.panel1.Controls.Add(this.A_B_Dashboard);
             this.panel1.Controls.Add(this.A_B_RestaurantManagement);
@@ -124,7 +124,7 @@
             // 
             // A_B_Theme
             // 
-            this.A_B_Theme.BackColor = System.Drawing.Color.Blue;
+            this.A_B_Theme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.A_B_Theme.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.A_B_Theme.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.A_B_Theme.Location = new System.Drawing.Point(42, 333);
@@ -137,7 +137,7 @@
             // 
             // A_B_Dashboard
             // 
-            this.A_B_Dashboard.BackColor = System.Drawing.Color.Blue;
+            this.A_B_Dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.A_B_Dashboard.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.A_B_Dashboard.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.A_B_Dashboard.Location = new System.Drawing.Point(42, 107);
@@ -150,7 +150,7 @@
             // 
             // A_B_RestaurantManagement
             // 
-            this.A_B_RestaurantManagement.BackColor = System.Drawing.Color.Blue;
+            this.A_B_RestaurantManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.A_B_RestaurantManagement.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.A_B_RestaurantManagement.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.A_B_RestaurantManagement.Location = new System.Drawing.Point(42, 258);
@@ -183,7 +183,7 @@
             // 
             // A_B_UserInfo
             // 
-            this.A_B_UserInfo.BackColor = System.Drawing.Color.Blue;
+            this.A_B_UserInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.A_B_UserInfo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.A_B_UserInfo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.A_B_UserInfo.Location = new System.Drawing.Point(42, 183);
@@ -226,7 +226,7 @@
             // 
             // btn_New
             // 
-            this.btn_New.BackColor = System.Drawing.Color.Blue;
+            this.btn_New.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btn_New.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_New.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btn_New.Location = new System.Drawing.Point(417, 59);
@@ -239,7 +239,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Blue;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.button1.Location = new System.Drawing.Point(578, 59);
@@ -252,7 +252,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Blue;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDelete.Location = new System.Drawing.Point(728, 59);
@@ -277,7 +277,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.A_B_Logout);
             this.Controls.Add(this.label6);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "RestaurantManagement";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RestaurantManagement";
             this.Load += new System.EventHandler(this.RestaurantManagement_Load);
             this.panel1.ResumeLayout(false);

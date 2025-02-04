@@ -70,12 +70,6 @@
     <Compile Include="Admin\DelRestaurant.Designer.cs">
       <DependentUpon>DelRestaurant.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\OrderHistory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\OrderHistory.Designer.cs">
-      <DependentUpon>OrderHistory.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin\RestaurantManagement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,12 +82,6 @@
     <Compile Include="Admin\Theme.Designer.cs">
       <DependentUpon>Theme.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\Update Restaurant.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\Update Restaurant.Designer.cs">
-      <DependentUpon>Update Restaurant.cs</DependentUpon>
-    </Compile>
     <Compile Include="Admin\UPRestaurant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,12 +93,6 @@
     </Compile>
     <Compile Include="Admin\UserInfo.Designer.cs">
       <DependentUpon>UserInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\Voucher.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\Voucher.Designer.cs">
-      <DependentUpon>Voucher.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer\BackUpOFCustomerInfo.cs">
       <SubType>Form</SubType>
@@ -221,17 +203,11 @@
     <EmbeddedResource Include="Admin\Theme.resx">
       <DependentUpon>Theme.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Update Restaurant.resx">
-      <DependentUpon>Update Restaurant.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Admin\UPRestaurant.resx">
       <DependentUpon>UPRestaurant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\UserInfo.resx">
       <DependentUpon>UserInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\Voucher.resx">
-      <DependentUpon>Voucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\BackUpOFCustomerInfo.resx">
       <DependentUpon>BackUpOFCustomerInfo.cs</DependentUpon>

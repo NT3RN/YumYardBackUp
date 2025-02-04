@@ -27,7 +27,7 @@ namespace YumYard.Resowner
         {
             try
             {
-                string query = "SELECT ProductID, ProductName, ProductPrice FROM RestaurantProducts";
+                string query = "SELECT ProductID, ProductName, ProductPrice,RestaurantID FROM RestaurantProducts";
                 string error;
                 DataTable dt = DbAccess.GetData(query, out error);
 
@@ -38,7 +38,7 @@ namespace YumYard.Resowner
                 }
 
                 dgvProducts.DataSource = dt;
-                dgvProducts.ReadOnly = true;
+                dgvProducts.ReadOnly = false;
             }
             catch (Exception ex)
             {
