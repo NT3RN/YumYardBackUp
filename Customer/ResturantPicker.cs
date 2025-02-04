@@ -36,6 +36,7 @@ namespace YumYard.Customer
             byte[][] restaurantImages;
             FetchImages(out themeImage, out restaurantImages);
             AssignImagesToPictureBoxes(themeImage, restaurantImages);
+            userEmail = email;
             LoadCustomerData(email);
         }
 
@@ -163,6 +164,7 @@ namespace YumYard.Customer
 
         private void msiProfile_Click(object sender, EventArgs e)
         {
+            //MessageBox.Show(userEmail);
             BackUpOFCustomerInfo backUpOFCustomerInfo = new BackUpOFCustomerInfo(userEmail);
             backUpOFCustomerInfo.Show();
             this.Hide();

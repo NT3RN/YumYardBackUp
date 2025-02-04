@@ -117,6 +117,7 @@ namespace YumYard.Register___Login
 
                     if (customerResult.Rows.Count > 0 && Convert.ToInt32(customerResult.Rows[0]["UserCount"]) > 0)
                     {
+                        //MessageBox.Show(email);
                         // Customer login successful
                         ResturantPicker resturantPicker = new ResturantPicker(email);
                         resturantPicker.Show();
