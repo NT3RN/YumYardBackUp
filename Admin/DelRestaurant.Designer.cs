@@ -54,7 +54,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Blue;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnDelete.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnDelete.Location = new System.Drawing.Point(545, 356);
@@ -67,7 +67,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Blue;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel1.Controls.Add(this.A_B_Theme);
             this.panel1.Controls.Add(this.A_B_Dashboard);
             this.panel1.Controls.Add(this.A_B_RestaurantManagement);
@@ -83,7 +83,7 @@
             // 
             // A_B_Theme
             // 
-            this.A_B_Theme.BackColor = System.Drawing.Color.Blue;
+            this.A_B_Theme.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.A_B_Theme.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.A_B_Theme.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.A_B_Theme.Location = new System.Drawing.Point(43, 333);
@@ -96,7 +96,7 @@
             // 
             // A_B_Dashboard
             // 
-            this.A_B_Dashboard.BackColor = System.Drawing.Color.Blue;
+            this.A_B_Dashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.A_B_Dashboard.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.A_B_Dashboard.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.A_B_Dashboard.Location = new System.Drawing.Point(43, 107);
@@ -109,7 +109,7 @@
             // 
             // A_B_RestaurantManagement
             // 
-            this.A_B_RestaurantManagement.BackColor = System.Drawing.Color.Blue;
+            this.A_B_RestaurantManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.A_B_RestaurantManagement.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.A_B_RestaurantManagement.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.A_B_RestaurantManagement.Location = new System.Drawing.Point(43, 258);
@@ -142,7 +142,7 @@
             // 
             // A_B_UserInfo
             // 
-            this.A_B_UserInfo.BackColor = System.Drawing.Color.Blue;
+            this.A_B_UserInfo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.A_B_UserInfo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.A_B_UserInfo.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.A_B_UserInfo.Location = new System.Drawing.Point(43, 183);
@@ -253,7 +253,10 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.A_B_Logout);
             this.Controls.Add(this.label6);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "DelRestaurant";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DelRestaurant";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

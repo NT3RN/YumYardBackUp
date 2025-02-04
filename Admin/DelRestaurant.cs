@@ -19,33 +19,35 @@ namespace YumYard.Admin
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            //string emailToDelete = txtEmail.Text.Trim();
-            //if (string.IsNullOrEmpty(emailToDelete))
-            //{
-            //    MessageBox.Show("Please enter an email to delete.");
-            //    return;
-            //}
+            string emailToDelete = txtEmail.Text.Trim();
+            if (string.IsNullOrEmpty(emailToDelete))
+            {
+                MessageBox.Show("Please enter an email to delete.");
+                return;
+            }
 
-            //string query = "DELETE FROM Restaurant WHERE rEmail = @email";
-            //string error;
-            //bool success = DbAccess.ExecuteQuery(query, new Dictionary<string, object>
-            //{
-            //    { "@email", emailToDelete }
-            //}, out error);
+            string query = "DELETE FROM Restaurant WHERE rEmail = @email";
+            string error;
 
-            //if (success)
-            //{
-            //    MessageBox.Show("Restaurant deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // ✅ Use ExecuteNonQuery instead of ExecuteQuery (fixes error)
+            bool success = DbAccess.ExecuteNonQuery(query, new Dictionary<string, object>
+            {
+                { "@email", emailToDelete }
+            }, out error);
 
-            //    // ✅ Refresh DataGridView in RestaurantManagement
-            //    restaurantManagement.LoadRestaurantData();
+            if (success)
+            {
+                MessageBox.Show("Restaurant deleted successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            //    this.Close(); // ✅ Close the delete form
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Error deleting restaurant: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+                // ✅ Refresh DataGridView in RestaurantManagement
+                restaurantManagement.LoadRestaurantData();
+
+                this.Close(); // ✅ Close the delete form
+            }
+            else
+            {
+                MessageBox.Show("Error deleting restaurant: " + error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void A_B_Dashboard_Click(object sender, EventArgs e)
