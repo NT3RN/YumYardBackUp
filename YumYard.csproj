@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{776779CB-F618-4535-A983-009562A63DCD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>YumYard</RootNamespace>
+    <AssemblyName>YumYard</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>packages\Guna.UI2.WinForms.2.0.4.6\lib\net472\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Add Restaurant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Add Restaurant.Designer.cs">
+      <DependentUpon>Add Restaurant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\OrderHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\OrderHistory.Designer.cs">
+      <DependentUpon>OrderHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\RestaurantManagement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\RestaurantManagement.Designer.cs">
+      <DependentUpon>RestaurantManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Theme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Theme.Designer.cs">
+      <DependentUpon>Theme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UPRestaurant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UPRestaurant.Designer.cs">
+      <DependentUpon>UPRestaurant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UserInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\UserInfo.Designer.cs">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Voucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Voucher.Designer.cs">
+      <DependentUpon>Voucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\BackUpOFCustomerInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\BackUpOFCustomerInfo.Designer.cs">
+      <DependentUpon>BackUpOFCustomerInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Forms\CustomerOderDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Forms\CustomerOderDetails.Designer.cs">
+      <DependentUpon>CustomerOderDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Forms\resWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Forms\resWelcome.Designer.cs">
+      <DependentUpon>resWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\Forms\UserInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\Forms\UserInfoForm.Designer.cs">
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Customer\ResturantPicker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Customer\ResturantPicker.Designer.cs">
+      <DependentUpon>ResturantPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseAccess\DbAccess.cs" />
+    <Compile Include="DatabaseAccess\Validation.cs" />
+    <Compile Include="Payment\CardPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payment\CardPayment.Designer.cs">
+      <DependentUpon>CardPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Register &amp; Login\PassForgot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register &amp; Login\PassForgot.Designer.cs">
+      <DependentUpon>PassForgot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Register &amp; Login\Registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register &amp; Login\Registration.Designer.cs">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Register &amp; Login\LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Register &amp; Login\LogIn.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resowner\Owner1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resowner\Owner1.Designer.cs">
+      <DependentUpon>Owner1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resowner\Owner1menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resowner\Owner1menu.Designer.cs">
+      <DependentUpon>Owner1menu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Restaurants\Res1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Restaurants\Res1.Designer.cs">
+      <DependentUpon>Res1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rform\r1Order.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rform\r1Order.Designer.cs">
+      <DependentUpon>r1Order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YumYard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YumYard.Designer.cs">
+      <DependentUpon>YumYard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Admin\Add Restaurant.resx">
+      <DependentUpon>Add Restaurant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\RestaurantManagement.resx">
+      <DependentUpon>RestaurantManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Theme.resx">
+      <DependentUpon>Theme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UPRestaurant.resx">
+      <DependentUpon>UPRestaurant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\UserInfo.resx">
+      <DependentUpon>UserInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Voucher.resx">
+      <DependentUpon>Voucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\BackUpOFCustomerInfo.resx">
+      <DependentUpon>BackUpOFCustomerInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Forms\CustomerOderDetails.resx">
+      <DependentUpon>CustomerOderDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Forms\resWelcome.resx">
+      <DependentUpon>resWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\Forms\UserInfoForm.resx">
+      <DependentUpon>UserInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer\ResturantPicker.resx">
+      <DependentUpon>ResturantPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payment\CardPayment.resx">
+      <DependentUpon>CardPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Register &amp; Login\PassForgot.resx">
+      <DependentUpon>PassForgot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register &amp; Login\Registration.resx">
+      <DependentUpon>Registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Register &amp; Login\LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resowner\Owner1.resx">
+      <DependentUpon>Owner1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resowner\Owner1menu.resx">
+      <DependentUpon>Owner1menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Restaurants\Res1.resx">
+      <DependentUpon>Res1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rform\r1Order.resx">
+      <DependentUpon>r1Order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YumYard.resx">
+      <DependentUpon>YumYard.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="bin\Debug\YumYard.exe.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment page bg1.png" />
+    <None Include="Resources\vegetables-falling-to-saucepan-isolated-flying-food-vegetable-soup-recipe-carrot-pepper-tomatoes-broccoli-onion-greens-white-346235891-fotor-bg-remover-2025020113910.png" />
+    <None Include="Resources\images-fotor-bg-remover-2025020221139.png" />
+    <None Include="Resources\transparent-waiter-icon-employees-icon-servant-outline-icon-5f999c6ba07be8.7477644016039025716574-fotor-bg-remover-2025020104558.png" />
+    <None Include="Resources\depositphotos_116881918-stock-photo-fork-and-knife-with-plates-fotor-bg-remover-2025020102432.png" />
+    <None Include="Resources\96782409-a-house-icon-white-icon-with-shadow-on-transparent-background-fotor-bg-remover-2025020101614 - Copy.png" />
+    <None Include="Resources\96782409-a-house-icon-white-icon-with-shadow-on-transparent-background.jpg" />
+    <None Include="images\choose resturant bg.png" />
+    <Content Include="bin\Debug\Guna.UI2.dll" />
+    <Content Include="bin\Debug\Receipts\OrderReceipt_103.txt" />
+    <Content Include="bin\Debug\Receipts\OrderReceipt_104.txt" />
+    <Content Include="bin\Debug\YumYard.exe" />
+    <Content Include="bin\Debug\YumYard.pdb" />
+    <Content Include="images\Blue and Purple Elegant Sky Stars Desktop Wallpaper.png" />
+    <Content Include="images\chefhead ICON.ico" />
+    <None Include="images\chefhead ICON.png" />
+    <None Include="images\choose resturant bg without pic.png" />
+    <Content Include="images\dine with us btn.png" />
+    <None Include="images\Yum Yard - Slogan.png" />
+    <None Include="images\Icons\icons8-home-50.png" />
+    <None Include="images\foodowner.jpg" />
+    <None Include="images\foodowner2.jpg" />
+    <Content Include="images\Icons\icons8-shopping-cart-48.png" />
+    <Content Include="images\Icons\icons8-user-50.png" />
+    <None Include="images\Icons\YUmYardText.png" />
+    <Content Include="images\log In btn.png" />
+    <Content Include="images\logo fry.ico" />
+    <None Include="images\logo fry.png" />
+    <None Include="images\payment page bg.png" />
+    <Content Include="images\register Btn.png" />
+    <Content Include="images\registerBg.png" />
+    <Content Include="images\Sign In.png" />
+    <Content Include="images\Welcome page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
