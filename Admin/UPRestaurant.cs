@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using YumYard.DatabaseAccess;
+using static YumYard.Admin.Dashboard;
 
 namespace YumYard.Admin
 {
@@ -123,6 +124,30 @@ namespace YumYard.Admin
             }
         }
 
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            NavigationHelper.OpenDashboard(this);
+        }
+
+        private void btnUserInfo_Click(object sender, EventArgs e)
+        {
+            NavigationHelper.OpenUserInfo(this);
+        }
+
+        private void btnRestaurantManagement_Click(object sender, EventArgs e)
+        {
+            NavigationHelper.OpenRestaurantManagement(this);
+        }
+
+        private void btnTheme_Click(object sender, EventArgs e)
+        {
+            NavigationHelper.OpenTheme(this);
+        }
+
+        private void A_B_Logout_Click(object sender, EventArgs e)
+        {
+            NavigationHelper.OpenLogout(this);
+        }
     }
 }
 

@@ -21,7 +21,7 @@ namespace YumYard.Admin
             LoadUserData();
         }
 
-        private void LoadUserData()
+        public void LoadUserData()
         {
             try
             {
@@ -59,7 +59,7 @@ namespace YumYard.Admin
             Dashboard.NavigationHelper.OpenDashboard(this);
         }
 
-        private void btnSave_Click_1(object sender, EventArgs e)
+        public void btnSave_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -150,6 +150,11 @@ namespace YumYard.Admin
             }
         }
 
+        public void LoadUserDataPublic()
+        {
+            LoadUserData(); // Calls the existing private method
+        }
+
 
 
 
@@ -177,7 +182,7 @@ namespace YumYard.Admin
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Dashboard.NavigationHelper.OpenLogout(this);
         }
 
         private void label6_Click(object sender, EventArgs e)
