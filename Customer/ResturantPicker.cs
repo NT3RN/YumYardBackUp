@@ -29,25 +29,17 @@ namespace YumYard.Customer
         public string res3Name;
         public string res4Name;
 
-        public ResturantPicker(string email, byte[] themeImage, byte[][] restaurantImages)
+        public ResturantPicker(string email)
         {
             InitializeComponent();
-
-            // ✅ Convert and assign the first image to picThemeBox
-            if (themeImage != null)
-                picThemeBox.Image = ByteArrayToImage(themeImage);
-
-            // ✅ Convert and assign the next 4 images to pic1, pic2, pic3, pic4
-            PictureBox[] pictureBoxes = { pic1, pic2, pic3, pic4 };
-            for (int i = 0; i < restaurantImages.Length && i < pictureBoxes.Length; i++)
-            {
-                if (restaurantImages[i] != null)
-                    pictureBoxes[i].Image = ByteArrayToImage(restaurantImages[i]);
-            }
+            byte[] themeImage;
+            byte[][] restaurantImages;
+            FetchImages(out themeImage, out restaurantImages);
+            AssignImagesToPictureBoxes(themeImage, restaurantImages);
             LoadCustomerData(email);
         }
 
-        // ✅ Helper method to convert byte array to Image
+        // Helper method to convert byte array to Image
         private Image ByteArrayToImage(byte[] byteArray)
         {
             using (MemoryStream ms = new MemoryStream(byteArray))
@@ -56,11 +48,69 @@ namespace YumYard.Customer
             }
         }
 
-        private void LoadCustomerData(string userEmail)
+        // Method to assign images to picture boxes
+        private void AssignImagesToPictureBoxes(byte[] themeImage, byte[][] restaurantImages)
+        {
+            // Convert and assign the first image to picThemeBox
+            if (themeImage != null)
+                picThemeBox.Image = ByteArrayToImage(themeImage);
+
+            // Convert and assign the next 4 images to pic1, pic2, pic3, pic4
+            PictureBox[] pictureBoxes = { pic1, pic2, pic3, pic4 };
+            for (int i = 0; i < restaurantImages.Length && i < pictureBoxes.Length; i++)
+            {
+                if (restaurantImages[i] != null)
+                    pictureBoxes[i].Image = ByteArrayToImage(restaurantImages[i]);
+            }
+        }
+
+        // Method to fetch images from the database
+        public void FetchImages(out byte[] themeImage, out byte[][] restaurantImages)
+        {
+            string error;
+
+            // Fetch theme image
+            string themeQuery = "SELECT TOP 1 tPic FROM RestaurantTheme WHERE tPic IS NOT NULL ORDER BY tID DESC";
+            var themeResult = DbAccess.GetData(themeQuery, out error);
+
+            themeImage = null;
+
+            if (themeResult != null && themeResult.Rows.Count > 0 && themeResult.Rows[0]["tPic"] != DBNull.Value)
+            {
+                themeImage = (byte[])themeResult.Rows[0]["tPic"];
+            }
+            else
+            {
+                MessageBox.Show("No valid theme image found in RestaurantTheme table.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            // Fetch restaurant images
+            restaurantImages = new byte[4][];
+
+            string restaurantQuery = "SELECT TOP 4 ImageData FROM Restaurant ORDER BY (SELECT NULL)";
+            var restaurantResult = DbAccess.GetData(restaurantQuery, out error);
+
+            if (restaurantResult != null && restaurantResult.Rows.Count > 0)
+            {
+                for (int i = 0; i < restaurantResult.Rows.Count && i < 4; i++)
+                {
+                    if (restaurantResult.Rows[i]["ImageData"] != DBNull.Value)
+                    {
+                        restaurantImages[i] = (byte[])restaurantResult.Rows[i]["ImageData"];
+                    }
+                    else
+                    {
+                        restaurantImages[i] = null;
+                    }
+                }
+            }
+        }
+
+        private void LoadCustomerData(string UserEmail)
         {
             try
             {
-                string query = $"SELECT C_ID FROM Customer WHERE C_Email = '{userEmail}'";
+                string query = $"SELECT C_ID FROM Customer WHERE C_Email = '{UserEmail}'";
                 string error;
                 var customerData = DbAccess.GetData(query, out error);
                 if (!string.IsNullOrEmpty(error))
@@ -72,8 +122,8 @@ namespace YumYard.Customer
                 if (customerData.Rows.Count > 0)
                 {
                     userID = customerData.Rows[0]["C_ID"].ToString();
-
                 }
+
                 // Fetch restaurant details
                 string restaurantQuery = "SELECT TOP 4 rID ,rName, rDetails FROM Restaurant";
                 var restaurantData = DbAccess.GetData(restaurantQuery, out error);
@@ -95,7 +145,6 @@ namespace YumYard.Customer
                     btnResturant3.Text = restaurantData.Rows[2]["rName"].ToString();
                     btnResturant4.Text = restaurantData.Rows[3]["rName"].ToString();
 
-
                     rtbRes1.Text = restaurantData.Rows[0]["rDetails"].ToString();
                     rtbRes2.Text = restaurantData.Rows[1]["rDetails"].ToString();
                     rtbRes3.Text = restaurantData.Rows[2]["rDetails"].ToString();
@@ -106,7 +155,6 @@ namespace YumYard.Customer
                 rtbRes3.BackColor = Color.DarkSalmon;
                 rtbRes4.BackColor = Color.DarkSalmon;
             }
-
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred while loading customer data: " + ex.Message);
@@ -129,8 +177,6 @@ namespace YumYard.Customer
                 logIn.Show();
                 this.Hide();
             }
-
-
         }
 
         private void btnResturant1_Click(object sender, EventArgs e)
@@ -155,7 +201,6 @@ namespace YumYard.Customer
             Res1 res3 = new Res1(userEmail, userID, res3Name, resID3);
             res3.Show();
             this.Hide();
-
         }
 
         private void btnResturant4_Click(object sender, EventArgs e)
