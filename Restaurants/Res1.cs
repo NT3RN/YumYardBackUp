@@ -96,7 +96,7 @@ namespace YumYard.Restaurants
             }
 
             // Pass images to ResturantPicker
-            ResturantPicker resturantPicker = new ResturantPicker(Uemail, themeImage, restaurantImages);
+            ResturantPicker resturantPicker = new ResturantPicker(Uemail);
             resturantPicker.Show();
             this.Hide();
         }

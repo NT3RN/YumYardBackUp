@@ -24,7 +24,7 @@ namespace YumYard.Customer
             lblTitle.Text = "User Information";
             ActiveButton(btnUser);
 
-            LoadForm(new UserInfoForm(email));
+            LoadForm(new UserInfoBackup(email));
         }
 
         private void LoadForm(Form form)
@@ -94,7 +94,7 @@ namespace YumYard.Customer
             }
 
             // Pass images to ResturantPicker
-            ResturantPicker resturantPicker = new ResturantPicker(email, themeImage, restaurantImages);
+            ResturantPicker resturantPicker = new ResturantPicker(email);
             resturantPicker.Show();
             this.Hide();
         }
@@ -105,7 +105,7 @@ namespace YumYard.Customer
             ActiveButton(btnUser);
             NonActiveButton(btnOrderInfo);
             NonActiveButton(btnHome);
-            LoadForm(new UserInfoForm(email));
+            LoadForm(new UserInfoBackup(email));
         }
 
         private void btnOrderInfo_Click(object sender, EventArgs e)

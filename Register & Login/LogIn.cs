@@ -117,45 +117,8 @@ namespace YumYard.Register___Login
 
                     if (customerResult.Rows.Count > 0 && Convert.ToInt32(customerResult.Rows[0]["UserCount"]) > 0)
                     {
-                        string themeQuery = "SELECT TOP 1 tPic FROM RestaurantTheme WHERE tPic IS NOT NULL ORDER BY tID DESC";
-                        var themeResult = DbAccess.GetData(themeQuery, out error);
-
-                        byte[] themeImage = null;
-
-                        // ✅ Prevent NULL reference error
-                        if (themeResult != null && themeResult.Rows.Count > 0 && themeResult.Rows[0]["tPic"] != DBNull.Value)
-                        {
-                            themeImage = (byte[])themeResult.Rows[0]["tPic"];
-                        }
-                        else
-                        {
-                            MessageBox.Show("No valid theme image found in RestaurantTheme table.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-
-                        byte[][] restaurantImages = new byte[4][];  // ✅ This ensures it exists before being used
-
-                        // Fetch 4 images from Restaurant
-                        string restaurantQuery = "SELECT TOP 4 ImageData FROM Restaurant ORDER BY (SELECT NULL)";
-                        var restaurantResult = DbAccess.GetData(restaurantQuery, out error);
-
-                        // ✅ Ensure restaurantResult is not null before processing
-                        if (restaurantResult != null && restaurantResult.Rows.Count > 0)
-                        {
-                            for (int i = 0; i < restaurantResult.Rows.Count && i < 4; i++)  // ✅ Avoid index out of range
-                            {
-                                if (restaurantResult.Rows[i]["ImageData"] != DBNull.Value)
-                                {
-                                    restaurantImages[i] = (byte[])restaurantResult.Rows[i]["ImageData"];
-                                }
-                                else
-                                {
-                                    restaurantImages[i] = null; // Handle case where image is missing
-                                }
-                            }
-                        }
-
-                        // Pass images to ResturantPicker
-                        ResturantPicker resturantPicker = new ResturantPicker(email, themeImage, restaurantImages);
+                        // Customer login successful
+                        ResturantPicker resturantPicker = new ResturantPicker(email);
                         resturantPicker.Show();
                         this.Hide();
                     }
@@ -173,7 +136,6 @@ namespace YumYard.Register___Login
                 }
             }
         }
-
 
         // Go into registration form
         private void btnClickHere_Click(object sender, EventArgs e)
@@ -204,7 +166,6 @@ namespace YumYard.Register___Login
             PassForgot passForgot = new PassForgot();
             passForgot.Show();
             this.Hide();
-            //MessageBox.Show("Will got to Forget pass freature");
         }
     }
 }
