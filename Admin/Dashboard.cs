@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using YumYard.Register___Login;
+using static YumYard.Admin.UserInfo;
 
 namespace YumYard.Admin
 {
@@ -28,17 +30,18 @@ namespace YumYard.Admin
 
             public static void OpenUserInfo(Form currentForm)
             {
+
                 UserInfo userInfo = new UserInfo();
                 userInfo.Show();
+                userInfo.LoadUserDataPublic();
                 currentForm.Hide();
+
             }
 
 
             public static void OpenOrderHistory(Form currentForm)
             {
-                OrderHistory orderHistory = new OrderHistory();
-                orderHistory.Show();
-                currentForm.Hide();
+                
             }
 
 
@@ -56,12 +59,25 @@ namespace YumYard.Admin
                 currentForm.Hide();
             }
 
+
+
             public static void OpenVoucher(Form currentForm)
             {
-                Voucher voucher = new Voucher();
-                voucher.Show();
-                currentForm.Hide();
+                
             }
+            public static void OpenLogout(Form currentForm)
+            {
+                var confirmResult = MessageBox.Show("Are you sure you want to logout?", "Confirm logout", MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    LogIn logIn = new LogIn();
+                    logIn.Show();
+                    currentForm.Hide();
+                }
+            }
+
+            
+
         }
 
 
@@ -74,7 +90,7 @@ namespace YumYard.Admin
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            NavigationHelper.OpenLogout(this);
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -84,7 +100,7 @@ namespace YumYard.Admin
 
         private void A_B_OrderHistory_Click(object sender, EventArgs e)
         {
-            NavigationHelper.OpenOrderHistory(this);
+            
         }
 
         private void A_B_RestaurantManagement_Click(object sender, EventArgs e)
@@ -99,7 +115,7 @@ namespace YumYard.Admin
 
         private void A_B_Voucher_Click(object sender, EventArgs e)
         {
-            NavigationHelper.OpenVoucher(this);
+            
         }
     }
 }

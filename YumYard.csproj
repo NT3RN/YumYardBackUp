@@ -64,6 +64,12 @@
     <Compile Include="Admin\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\DelRestaurant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\DelRestaurant.Designer.cs">
+      <DependentUpon>DelRestaurant.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\OrderHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,12 @@
     </Compile>
     <Compile Include="Admin\Theme.Designer.cs">
       <DependentUpon>Theme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Update Restaurant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Update Restaurant.Designer.cs">
+      <DependentUpon>Update Restaurant.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\UPRestaurant.cs">
       <SubType>Form</SubType>
@@ -194,11 +206,17 @@
     <EmbeddedResource Include="Admin\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\DelRestaurant.resx">
+      <DependentUpon>DelRestaurant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\RestaurantManagement.resx">
       <DependentUpon>RestaurantManagement.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\Theme.resx">
       <DependentUpon>Theme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Update Restaurant.resx">
+      <DependentUpon>Update Restaurant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\UPRestaurant.resx">
       <DependentUpon>UPRestaurant.cs</DependentUpon>

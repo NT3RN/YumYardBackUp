@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using YumYard.DatabaseAccess;
+using static YumYard.Admin.Dashboard;
 
 namespace YumYard.Admin
 {
@@ -117,7 +118,7 @@ namespace YumYard.Admin
 
         private void A_B_OrderHistory_Click(object sender, EventArgs e)
         {
-            Dashboard.NavigationHelper.OpenOrderHistory(this);
+            
         }
 
         private void A_B_RestaurantManagement_Click(object sender, EventArgs e)
@@ -132,7 +133,7 @@ namespace YumYard.Admin
 
         private void A_B_Voucher_Click(object sender, EventArgs e)
         {
-            Dashboard.NavigationHelper.OpenVoucher(this);
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -140,6 +141,20 @@ namespace YumYard.Admin
             UPRestaurant UPR = new UPRestaurant();
             UPR.Show();
             this.Hide();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DelRestaurant deleteForm = new DelRestaurant(this); // Pass reference to current form
+            this.Hide(); // Hide the current form
+            deleteForm.ShowDialog(); // Open the delete form as a modal dialog
+            this.Show();
+
+        }
+
+        private void A_B_Logout_Click(object sender, EventArgs e)
+        {
+            NavigationHelper.OpenLogout(this);
         }
     }
 }

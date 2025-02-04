@@ -14,7 +14,7 @@ namespace YumYard.DatabaseAccess
 
         //public static string ConnectionString = "Data Source=NPC\\SQLEXPRESS;Initial Catalog=YumYardDb;Integrated Security=True;Encrypt=False";
         //Karib connection
-        public static string ConnectionString = "Data Source=NPC\\SQLEXPRESS;Initial Catalog=YY;Integrated Security=True;Encrypt=False";
+        public static string ConnectionString = "Data Source=DESKTOP-DFDO1KK\\SQLEXPRESS;Initial Catalog=YumYardDB;Integrated Security=True;Encrypt=False";
         //Data Source=NPC\SQLEXPRESS;Initial Catalog=YumYardDb;Integrated Security=True;Encrypt=False (Use Encription as Optional and dont use trust certificate)
 
         //public static string ConnectionString = "Data Source=DESKTOP-8GC16NO\\SQLEXPRESS;Initial Catalog=YumYardDB;Integrated Security=True;Encrypt=False";
